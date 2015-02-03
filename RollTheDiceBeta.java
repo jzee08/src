@@ -21,8 +21,8 @@ public class RollTheDiceBeta {
 		int five = 0;
 		int six = 0;
 		int streakStart = 0;	// Records the start of the run
-		int currentStreak = 1;	// Records the current run
-		int maxStreak = 1;		// The holds the largest streak as the array iterates
+		int currentStreak = 0;	// Records the current run
+		int maxStreak = 0;		// The holds the largest streak as the array iterates
 
 		// Allows user to allocate the size of the array
 		System.out.print("\nPlease enter the number of times you would like to roll the dice: ");
@@ -43,8 +43,8 @@ public class RollTheDiceBeta {
 		// to simulate a dice roll
 		for (i = 0; (i < diceArray.length); i++ ){
 			// calculate the value for each die
-			 diceArray[i]=(int)((Math.random()*6)+1);
-			//  diceArray[i]=3;
+			diceArray[i]=(int)((Math.random()*6)+1);
+			
 			// If you want to mute the output of each roll just add a comment in
 			// front of the next two lines
 			System.out.printf("Roll #" + i + "  face of the die is " + diceArray[i]);
@@ -70,24 +70,20 @@ public class RollTheDiceBeta {
 				six = six + 1;
 			}
 			
-			// This is compares the current record to the previous record 
+		    // This is compares the current record to the previous record 
 			// in the array in order to count the run and longest streak
-
+			
 			if (i != 0){
-				if (diceArray[i] == diceArray[i-1]) { // never compare a boolean with a boolean constant, just use it
-					currentStreak++; // use ++ in preference to +=1, and this should be before maxRun test
-					
-					if (maxStreak < currentStreak) {
-						maxStreak = currentStreak;
-						//streakStart = (i);
-						if (diceArray[i] == diceArray[i-1]) {
-						streakStart = (i-1); // this will produce a 1-based position
-						}
-					} // end of if
-				} else { // sets current run back to zero in order to count the next run
-					currentStreak = 0;
-				} // end of else
-			}// end of if
+			if (diceArray[i] == diceArray[i-1]) { // never compare a boolean with a boolean constant, just use it
+		        currentStreak++; // use ++ in preference to +=1, and this should be before maxRun test
+		        if (maxStreak < currentStreak) {
+		            maxStreak = currentStreak;
+		            streakStart = (i-1); // this will produce a 1-based position
+		        } // end of if
+		    } else { // sets current run back to zero in order to count the next run
+		        currentStreak = 0;
+		    } // end of else
+			}
 		}// end of for loop
 		
 		// Print the final results back to the user
@@ -113,7 +109,7 @@ public class RollTheDiceBeta {
 		System.out.println("The streak data!");
 		
 		System.out.println("The longest streak was a streak of " + maxStreak);
-		System.out.println("The longest streak was a streak of " + diceArray[streakStart] + "'s and it started at roll " + ((streakStart)));
+		System.out.println("The longest streak was a streak of " + diceArray[streakStart] + "'s and it started at roll " + streakStart);
 		// I always put this at the end of every program
 		System.out.println("\n\n\nThe program has completed successfully");
 	}
