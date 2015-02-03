@@ -20,6 +20,12 @@ public class RollTheDiceBeta {
 		int four = 0;
 		int five = 0;
 		int six = 0;
+		int seven = 0;
+		int eight = 0;
+		int nine = 0;
+		int ten = 0;
+		int eleven = 0;
+		int twelve = 0;
 		int streakStart = 0;	// Records the start of the run
 		int currentStreak = 1;	// Records the current run
 		int maxStreak = 0;		// The holds the largest streak as the array iterates
@@ -69,6 +75,24 @@ public class RollTheDiceBeta {
 			if (diceArray[i] == 6){
 				six = six + 1;
 			}
+			if (diceArray[i] == 7){
+				seven = seven + 1;
+			}
+			if (diceArray[i] == 8){
+				eight = eight + 1;
+			}
+			if (diceArray[i] == 9){
+				nine = nine + 1;
+			}
+			if (diceArray[i] == 10){
+				ten = ten + 1;
+			}
+			if (diceArray[i] == 11){
+				eleven = eleven + 1;
+			}
+			if (diceArray[i] == 12){
+				twelve = twelve + 1;
+			}
 
 			// This is compares the current record to the previous record 
 			// in the array in order to count the run and longest streak
@@ -103,6 +127,18 @@ public class RollTheDiceBeta {
 		System.out.printf("                              5's = " + five + " -- which is " + "%3.1f", ((double)five/(double)(numberRolls)*100));
 		System.out.println("% of the total rolls");
 		System.out.printf("                              6's = " + six + " -- which is " + "%3.1f", ((double)six/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              7's = " + seven + " -- which is " + "%3.1f", ((double)seven/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              8's = " + eight + " -- which is " + "%3.1f", ((double)eight/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              9's = " + nine + " -- which is " + "%3.1f", ((double)nine/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              10's = " + ten + " -- which is " + "%3.1f", ((double)ten/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              11's = " + eleven + " -- which is " + "%3.1f", ((double)eleven/(double)(numberRolls)*100));
+		System.out.println("% of the total rolls");
+		System.out.printf("                              12's = " + twelve + " -- which is " + "%3.1f", ((double)twelve/(double)(numberRolls)*100));
 		System.out.println("% of the total rolls");
 
 
