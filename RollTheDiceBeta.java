@@ -20,6 +20,9 @@ public class RollTheDiceBeta {
 		int four = 0;
 		int five = 0;
 		int six = 0;
+		int streakStart = 0;	// Records the start of the run
+		int currentStreak = 1;	// Records the current run
+		int maxStreak = 0;		// The holds the largest streak as the array iterates
 
 		// Allows user to allocate the size of the array
 		System.out.print("\nPlease enter the number of times you would like to roll the dice: ");
@@ -41,8 +44,12 @@ public class RollTheDiceBeta {
 		for (i = 0; (i < diceArray.length); i++ ){
 			// calculate the value for each die
 			diceArray[i]=(int)((Math.random()*6)+1);
+			
+			// If you want to mute the output of each roll just add a comment in
+			// front of the next two lines
 			System.out.printf("Roll #" + i + "  face of the die is " + diceArray[i]);
 			System.out.println();
+			
 			// These if statements count the number of times each number appears on the face of the die
 			if (diceArray[i] == 1){
 				one = one + 1;
@@ -62,9 +69,23 @@ public class RollTheDiceBeta {
 			if (diceArray[i] == 6){
 				six = six + 1;
 			}
-
+			
+		    // This is compares the current record to the previous record 
+			// in the array in order to count the run and longest streak
+			
+			if (i != 0){
+			if (diceArray[i] == diceArray[i-1]) { // never compare a boolean with a boolean constant, just use it
+		        currentStreak++; // use ++ in preference to +=1, and this should be before maxRun test
+		        if (maxStreak < currentStreak) {
+		            maxStreak = currentStreak;
+		            streakStart = (i-1); // this will produce a 1-based position
+		        } // end of if
+		    } else { // sets current run back to zero in order to count the next run
+		        currentStreak = 0;
+		    } // end of else
+			}
 		}// end of for loop
-
+		
 		// Print the final results back to the user
 		// I used (i-1) because the for loop adds one to i each time it loops
 		// and the last roll adds 1 to the index but doesn't create a value for diceArray[i]
@@ -84,6 +105,11 @@ public class RollTheDiceBeta {
 		System.out.printf("                              6's = " + six + " -- which is " + "%3.1f", ((double)six/(double)(numberRolls)*100));
 		System.out.println("% of the total rolls");
 
+		
+		System.out.println("The streak data!");
+		
+		System.out.println("The longest streak was a streak of " + maxStreak);
+		System.out.println("The longest streak was a streak of " + diceArray[streakStart] + "'s and it started at roll " + streakStart);
 		// I always put this at the end of every program
 		System.out.println("\n\n\nThe program has completed successfully");
 	}
