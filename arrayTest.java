@@ -5,7 +5,7 @@ public class arrayTest {
 		
 		int i = 0;	//index of myArray row
 		int j = 0;	// index of the column
-		int[][] myArray = new int [100][2];
+		int[][] myArray = new int [100][3];
 		
 		
 		//System.out.print(myArray[i][j]);
@@ -15,14 +15,21 @@ public class arrayTest {
 		
 		
 		for (i = 0; i < myArray.length; i++) {
-			myArray[0][0] = (int)((Math.random()*6)+1);
-			myArray[0][1] = (int)((Math.random()*6)+1);
+			StringBuilder arrayOutput = new StringBuilder();
+			
 			for (j = 0; j < myArray[i].length; j++) {
-				System.out.print(myArray[i][j]);
+				myArray[i][j] = (int)((Math.random()*6)+1);
+				if (j == 0) {
+					arrayOutput.append("Roll #" + i + " Dice one rollded a ");
+				}
+				else {
+					arrayOutput.append(" dice two rolled a ");
+				}
+				arrayOutput.append(myArray[i][j]);
 				
 			} // end of the j array
-		
-			System.out.println();
+			
+			System.out.println(arrayOutput);
 			
 		} // end of the i array
 		
