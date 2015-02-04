@@ -32,6 +32,8 @@ public class arrayTest {
 			System.out.println(arrayOutput);
 			
 		} // end of the i array
+		int total = 0;
+		System.out.println("testing a sum " + (total += myArray[i][j]));
 		
 	} // end of main method
 	
