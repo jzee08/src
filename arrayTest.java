@@ -3,31 +3,29 @@ public class arrayTest {
 
 	public static void main(String[] args) {
 		
-		int i;	//index of myArray
+		int i = 0;	//index of myArray row
+		int j = 0;	// index of the column
+		int[][] myArray = new int [100][2];
 		
-		double[] myArray = new double [4];
 		
-		for (i = 0; (i < myArray.length); i++ ){
+		//System.out.print(myArray[i][j]);
+		//System.out.print(myArray[0][1]);
+		//myArray[2][0] = "roll";
+		//myArray[2][1] = "the dice";
+		
+		
+		for (i = 0; i < myArray.length; i++) {
+			myArray[0][0] = (int)((Math.random()*6)+1);
+			myArray[0][1] = (int)((Math.random()*6)+1);
+			for (j = 0; j < myArray[i].length; j++) {
+				System.out.print(myArray[i][j]);
+				
+			} // end of the j array
+		
+			System.out.println();
 			
-			myArray[i] = 10;
-			System.out.println(myArray[i] + " ");
-			System.out.println("i = " + i);
-		} // end of for loop
+		} // end of the i array
 		
-		// Summing all elements
-	      double total = 0;
-	      for (i = 0; i < myArray.length; i++) {
-	         total += myArray[i];         
-	      } // end of for loop
-	      System.out.println("The total is " + total);
+	} // end of main method
 	
-	   // Finding the largest element
-	      double max = myArray[0];
-	      for (i = 1; i < myArray.length; i++) {
-	         if (myArray[i] > max) max = myArray[i];
-	      }
-	      System.out.println("Max is " + max);
-	      
-	
-	}// end of main class
-}
+} // end of class
