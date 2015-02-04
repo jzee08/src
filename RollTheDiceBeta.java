@@ -14,9 +14,8 @@ public class RollTheDiceBeta {
 		int i;				// The index of both diceArray1 and diceArray2
 		int[] diceArray1; 	// Declare the type of array for dice 1
 		int[] diceArray2;	// Declare the type of array for dice 2
-		int numberRolls;	// The number of rolls input by the user
-		int one = 0;		// Used to count the number of times each total of the roll of die hits
-		int two = 0;		
+		int numberRolls;	// The number of rolls input by the user		
+		int two = 0;		// Used to count the number of times each total of the roll of die hits
 		int three = 0;
 		int four = 0;
 		int five = 0;
