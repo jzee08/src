@@ -29,7 +29,10 @@ public class RollTheDiceBeta {
 		int streakStart = 0;	// Records the starting index position of the run
 		int currentStreak = 1;	// Records the current run
 		int maxStreak = 0;		// The holds the largest streak as the array iterates
-
+		
+		System.out.println("Welcome to Roll Those Dice");
+		System.out.println("By Joe Phinazee");
+		System.out.println("Credit to Carl Argabright");
 		// Allows user to choose the size of the array
 		System.out.print("\nPlease enter the number of times you would like to roll the dice: ");
 		numberRolls = TextIO.getInt();
@@ -54,8 +57,8 @@ public class RollTheDiceBeta {
 
 			// If you want to mute the output of each roll just
 			// add a comment in front of the next two lines
-			//System.out.printf("Roll #" + i + "  dice1 = " + diceArray1[i] + "  dice2 = " + diceArray2[i] + " Sum = " + (diceArray1[i]+diceArray2[i]));
-			//System.out.println();
+			System.out.printf("Roll #" + i + "  dice1 = " + diceArray1[i] + "  dice2 = " + diceArray2[i] + " Sum = " + (diceArray1[i]+diceArray2[i]));
+			System.out.println();
 
 			// These if statements count the number of times each number appears on the face of the die
 			if (diceArray1[i] + diceArray2[i] == 2){
