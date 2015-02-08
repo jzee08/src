@@ -58,7 +58,7 @@ public class QuadraticMethodsBeta {
 			playAgain = TextIO.getBoolean();
 		} // End of while loop
 
-		System.out.println("Thank you, have a nice day!");
+		System.out.println("\nThank you, have a nice day!");
 	} // end of main method
 
 
