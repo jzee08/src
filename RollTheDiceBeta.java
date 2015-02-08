@@ -1,8 +1,6 @@
-/**
- * 
- */
 
 /**
+ * Awesome program that
  * @author hombregigante
  *
  */
@@ -10,6 +8,31 @@ public class RollTheDiceBeta {
 
 	public static void main(String[] args) {
 
+		boolean playAgain = true;
+		
+		System.out.println("Welcome to Roll Those Dice");
+		System.out.println("By Joe Phinazee");
+		System.out.println("Credit to Carl Argabright");
+		
+		while (playAgain){ 
+		rollThoseDice();
+		
+		System.out.print("\n\nDo you want to roll again? 'yes' or 'no':");
+		playAgain = TextIO.getBoolean();
+		}
+		
+		
+		// I always put this at the end of every program
+				System.out.println("\n\n\nThe program has completed successfully");
+	} // end of main method()
+
+	
+	
+	
+	/**
+	 * rollThoseDice dos this and that
+	 */
+	public static void rollThoseDice(){
 
 		int i;				// The index of both diceArray1 and diceArray2
 		int[] diceArray1; 	// Declare the type of array for dice 1
@@ -30,9 +53,6 @@ public class RollTheDiceBeta {
 		int currentStreak = 1;	// Records the current run
 		int maxStreak = 0;		// The holds the largest streak as the array iterates
 
-		System.out.println("Welcome to Roll Those Dice");
-		System.out.println("By Joe Phinazee");
-		System.out.println("Credit to Carl Argabright");
 		// Allows user to choose the size of the array
 		System.out.print("\nPlease enter the number of times you would like to roll the dice: ");
 		numberRolls = TextIO.getInt();
@@ -166,10 +186,6 @@ public class RollTheDiceBeta {
 		System.out.println("The streak data!");
 		System.out.println("The longest streak was a streak of " + maxStreak);
 		System.out.println("The longest streak was a streak of " + (diceArray1[streakStart]+diceArray2[streakStart]) + "'s and it started at roll " + (streakStart));
-
-		// I always put this at the end of every program
-		System.out.println("\n\n\nThe program has completed successfully");
-
-	} // end of main method()
+	} // end of rollThoseDice method
 
 } // end of RollThoseDice public class
