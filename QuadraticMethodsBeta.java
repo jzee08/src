@@ -7,41 +7,43 @@
  *
  */
 public class QuadraticMethodsBeta {
-
+	
+	public static double[] userInput;
+	public static double discriminate;
+	
 	public static void main(String[] args) {
-		double userInput[];
-		double discriminate;
 
 		System.out.println(); // prints a blanks plane at the top of the program
 		
 		// calls the getUserInput method to acquire the three terms used in finding the discriminate
+		// and prints the values entered back to the user for confirmation
 		userInput = getUserInput();
 
-		
+		// calls the getDiscriminate method and displays the result back to the user
 		discriminate = getDiscriminate(userInput[0], userInput[1], userInput[2]);
-		System.out.println("The discriminate is: " + discriminate);
+		System.out.println("The discriminate is: " + discriminate + "\n");
 
 		//These if statements will determine what types of roots the solution will have
 		if (discriminate < 0){
-			System.out.println("Two zeros that are comlpex conjugates exist");
+			System.out.println("Two zeros that are comlpex conjugates exist\n");
 		}
 		else if (discriminate == 0){
 			System.out.println("one real zero of multiplicity two exists");
+			System.out.println("The solution is x = " + (-1*(userInput[1]))/(2*userInput[0]) + "\n");
 		}
 		else if (discriminate > 0){
 			if (isSquare(discriminate)){
-				System.out.println("The discriminate > 0 and a perfect square, then the solutions are rational and different");
+				System.out.println("Since the discriminate is > 0 and a perfect square, the "
+						+ "solutions are rational and different\n");
+				isUnequalPrint();
 			}
 			else {
-				System.out.println("then the solutions are irrational and different");
+				System.out.println("Since the discriminate is > 0 and not a perfect square the "
+						+ "solutions are irrational and different\n");
 			} // end else
 		} // end if
-		else if (isSquare(discriminate)){
-			System.out.println("The value of isSquare is: " + isSquare(discriminate));
-		}
-		System.out.println("The value of isSquare is: " + isSquare(discriminate));
 
-		System.out.println("Your calculation has completed succesfully!");
+		System.out.println("\n\nYour calculation has completed succesfully!");
 	} // end of main method
 
 	
@@ -77,10 +79,8 @@ public class QuadraticMethodsBeta {
 			System.out.print(ch + " = " + array[j] + ",  ");
 			ch++;
 		}
-
-		System.out.println("\n\nuserInput method ran successfully\n");
 		return(array);
-	} // end of sayHello method
+	} // end of getUserInput method
 
 	
 	/**
@@ -92,17 +92,42 @@ public class QuadraticMethodsBeta {
 	 * @return The discriminate of the quadratic back to the main method
 	 * into the variable "discriminate"
 	 */
-	public static double getDiscriminate(double a, double b, double c){
-		double d;
+	public static double getDiscriminate(Double a, Double b, Double c){
+		Double d;
 		b = Math.pow(b, 2);
 		d = (b-(4*a*c));
-		
-		System.out.println("The get Discriminate method has completed successfully");
 		return(d);
 	} // end of getDiscriminate method
+
+	
+	/**
+	 * The isUnequal method solves the quadratic equation while the discriminate is a positive
+	 * number and not a perfect square
+	 * @return an array with the two zeros as an array of 2 elements
+	 */
+	public static double[] isUnequal(){
+		double[] x = new double[2];
+		// stores the zeros into an array of two elements
+		x[0] = (Double)(((-1*userInput[1]) + (Math.sqrt(discriminate)))/(2*userInput[0]));
+		x[1] = (Double)(((-1*userInput[1]) - (Math.sqrt(discriminate)))/(2*userInput[0]));
+
+		return(x); // returns back to where method was called
+	}
 	
 	
-	 
+	/**
+	 * isUnequalPrint method uses the isUnequal method to return the value of
+	 * the two zeros back to the standard output for the user to verify the result
+	 * @return 
+	 */
+	public static void isUnequalPrint(){
+		
+			double x[] = new double [2];
+			x = isUnequal();
+			System.out.print("The solution is two distinct real numbers: x = " + x[0] + " and x = " + x[1] + "\n");
+	}
+	
+	
 	/** Used to determine if the discriminate is a perfect square
 	 * @param x
 	 * @return true or false as boolean
