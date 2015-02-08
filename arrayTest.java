@@ -5,7 +5,7 @@ public class arrayTest {
 		
 		int i = 0;	//index of myArray row
 		int j = 0;	// index of the column
-		int[][] myArray = new int [100][3];
+		int[][] myArray = new int [5][3];
 		
 		
 		//System.out.print(myArray[i][j]);
@@ -25,7 +25,6 @@ public class arrayTest {
 				else {
 					arrayOutput.append(" dice two rolled a ");
 				}
-				arrayOutput.append(myArray[i][j]);
 				
 			} // end of the j array
 			
@@ -33,7 +32,7 @@ public class arrayTest {
 			
 		} // end of the i array
 		int total = 0;
-		System.out.println("testing a sum " + (total += myArray[i][j]));
+		System.out.println("testing a sum " + (myArray[i-1] == myArray[j-1]));
 		
 	} // end of main method
 	
