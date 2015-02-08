@@ -54,12 +54,11 @@ public class QuadraticMethodsBeta {
 
 			System.out.println("\n\nYour calculation has completed succesfully!");
 
-			System.out.println("\n\nDo you want to make another calculation?");
-			System.out.print("'YES' or 'NO': ");
+			System.out.print("\n\nDo you want to make another calculation? 'YES' or 'NO': ");
 			playAgain = TextIO.getBoolean();
 		} // End of while loop
 
-
+		System.out.println("Thank you, have a nice day!");
 	} // end of main method
 
 
