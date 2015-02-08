@@ -5,8 +5,12 @@ public class arrayTest {
 		
 		int i = 0;	//index of myArray row
 		int j = 0;	// index of the column
+<<<<<<< HEAD
 		int[][] myArray = new int [100][2];
 		//int numberRolls = 0;
+=======
+		int[][] myArray = new int [5][3];
+>>>>>>> FETCH_HEAD
 		
 		
 		//System.out.print("\nPlease enter the number of times you would like to roll the dice: ");
@@ -32,15 +36,19 @@ public class arrayTest {
 				else {
 					arrayOutput.append(" Dice 2 = ");
 				}
-				arrayOutput.append(myArray[i][j]);
 				
 			} // end of the j array
 			
 			System.out.println(arrayOutput);
 			
 		} // end of the i array
+<<<<<<< HEAD
 		//int total = 0;
 		//System.out.println("testing a sum " + (total += myArray[i][j]));
+=======
+		int total = 0;
+		System.out.println("testing a sum " + (myArray[i-1] == myArray[j-1]));
+>>>>>>> FETCH_HEAD
 		
 	} // end of main method
 	
