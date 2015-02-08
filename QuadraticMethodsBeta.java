@@ -15,42 +15,49 @@ public class QuadraticMethodsBeta {
 	public static double discriminate;
 
 	public static void main(String[] args) {
-		
-		System.out.println(); // prints a blanks plane at the top of the program
+		boolean playAgain = true;
 
-		// calls the getUserInput method to acquire the three terms used in finding the discriminate
-		// and prints the values entered back to the user for confirmation
-		userInput = getUserInput();
+		while (playAgain){
+			System.out.println(); // prints a blanks plane at the top of the program
 
-		// calls the getDiscriminate method and displays the result back to the user
-		discriminate = getDiscriminate(userInput[0], userInput[1], userInput[2]);
-		System.out.println("The discriminate is: " + discriminate + "\n");
+			// calls the getUserInput method to acquire the three terms used in finding the discriminate
+			// and prints the values entered back to the user for confirmation
+			userInput = getUserInput();
 
-		//These if statements will determine what types of roots the solution will have
-		if (discriminate < 0){
-			System.out.println("Two zeros that are comlpex conjugates exist");
-			isComplexPrint();
-			
-		}
-		else if (discriminate == 0){
-			System.out.println("Since the discriminate is equal to zero only one real root exists "
-					+ "and has a multiplictiy two");
-			isDoubleRootPrint();
+			// calls the getDiscriminate method and displays the result back to the user
+			discriminate = getDiscriminate(userInput[0], userInput[1], userInput[2]);
+			System.out.println("The discriminate is: " + discriminate + "\n");
 
-		}
-		else if (discriminate > 0){
-			if (isSquare(discriminate)){
-				System.out.println("Since the discriminate is > 0 and a perfect square, the "
-						+ "solutions are rational and different\n");
-				isUnequalPrint();
+			//These if statements will determine what types of roots the solution will have
+			if (discriminate < 0){
+				System.out.println("Two zeros that are comlpex conjugates exist");
+				isComplexPrint();
+
 			}
-			else {
-				System.out.println("Since the discriminate is > 0 and not a perfect square the "
-						+ "solutions are irrational and different\n");
-			} // end else
-		} // end if
+			else if (discriminate == 0){
+				System.out.println("Since the discriminate is equal to zero only one real root exists "
+						+ "and has a multiplictiy two");
+				isDoubleRootPrint();
 
-		System.out.println("\n\nYour calculation has completed succesfully!");
+			}
+			else if (discriminate > 0){
+				if (isSquare(discriminate)){
+					System.out.println("Since the discriminate is > 0 and a perfect square, the "
+							+ "solutions are rational and different\n");
+					isUnequalPrint();
+				}
+				else {
+					System.out.println("Since the discriminate is > 0 and not a perfect square the "
+							+ "solutions are irrational and different\n");
+				} // end else
+			} // end if
+
+			System.out.println("\n\nYour calculation has completed succesfully!");
+
+			System.out.println("\n\nDo you want to make another calculation?");
+			System.out.print("'YES' or 'NO': ");
+			playAgain = TextIO.getBoolean();
+		} // End of while loop
 
 
 	} // end of main method
@@ -165,7 +172,7 @@ public class QuadraticMethodsBeta {
 		System.out.print("The solutions are x = "+ df.format(x[0])+ " + " + df.format(x[1]) + "i");
 		System.out.println(" and x = "+ df.format(x[0])+ " - " + df.format(x[1]) + "i");
 
-		
+
 	} // end isComplexPrint method
 
 	// Method seven
