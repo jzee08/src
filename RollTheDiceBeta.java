@@ -29,7 +29,7 @@ public class RollTheDiceBeta {
 		int streakStart = 0;	// Records the starting index position of the run
 		int currentStreak = 1;	// Records the current run
 		int maxStreak = 0;		// The holds the largest streak as the array iterates
-		
+
 		System.out.println("Welcome to Roll Those Dice");
 		System.out.println("By Joe Phinazee");
 		System.out.println("Credit to Carl Argabright");
@@ -115,9 +115,9 @@ public class RollTheDiceBeta {
 		// I used (i-1) because the for loop adds one to i each time it loops
 		// and the last roll adds 1 to the index but doesn't create a value for diceArray[i]
 		// a workaround for this would be to use the while statement that adds i++ at the end of the loop
-		
-			//System.out.println("\nindex is at position " + (i-1) + " and the face of the die is " + diceArray1[i-1]);
-			System.out.println("\nThe break down of each dice and the precentage the face of the die came up:");
+
+		//System.out.println("\nindex is at position " + (i-1) + " and the face of the die is " + diceArray1[i-1]);
+		System.out.println("\nThe break down of each dice and the precentage the face of the die came up:");
 		if (!(two == 0)) {
 			System.out.printf("                               2's = " + two + " -- which is " + "%3.1f", ((double)two/(double)(numberRolls)*100));
 			System.out.println("% of the total rolls");
